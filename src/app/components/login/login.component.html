@@ -1,0 +1,19 @@
+<div class="login-form" fxLayout="column" fxLayoutAlign="center center">
+
+    <h2>Log in to your account</h2>
+
+    <form fxLayout="column" fxLayoutAlign="center center" #form="ngForm" (ngSubmit)="login(form)">
+        <mat-form-field>
+            <input required matInput name="email" type="email" placeholder="Email" ngModel #email="ngModel">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input required matInput name="password" ngModel placeholder="Password" [type]="hide ? 'password' : 'text'" ngModel #password="ngModel">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" [disabled]="!form.valid">Log in</button>
+    </form>
+    
+    <a mat-button routerLink="/account/register">Don't have an account yet ?</a>
+</div>

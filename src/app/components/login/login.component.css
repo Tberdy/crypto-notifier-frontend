@@ -1,0 +1,16 @@
+div.login-form {
+    padding: 80px 0px;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+mat-form-field {
+    width: 300px;
+}
+
+button[mat-raised-button] {
+    margin: 24px 0px;
+    width: 300px;
+}

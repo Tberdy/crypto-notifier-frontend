@@ -1,0 +1,14 @@
+<header>
+    <nav>
+        <a mat-button routerLink="">{{title}}</a>
+
+        <div *ngIf="authService.getUser().logged; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+            <a class="right" mat-button routerLink="/account/my">{{authService.getUser().email}}</a>
+        </ng-template>
+        <ng-template #elseBlock>
+            <a class="right" mat-button routerLink="/account/login">Login / Register</a>
+        </ng-template>
+    </nav>
+</header>
+
